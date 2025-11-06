@@ -16,14 +16,16 @@ let prompt = require ('prompt-sync')();
 let clave = 35;
 leerNumero(clave);
 function leerNumero (clave) {
+    let codigo;
     do{
-    let codigo = prompt('Introduce un numero entre 1 y 100: ');
+    codigo = prompt('Introduce un numero entre 1 y 100: ');
+    codigo=Number(codigo);
     if(codigo>0 && codigo<101){
     comprobarValor(codigo, clave);
     }else{
         console.log('Tiene que ser entre 1 y 100');
     }
-    }while(codigo=!clave)
+    }while(codigo !== clave)
 }
 function comprobarValor(codigo,clave){
 
@@ -32,7 +34,7 @@ function comprobarValor(codigo,clave){
     }else if (codigo < clave){
         console.log(`-1: el ${codigo} es menor que el numeroCorrecto`);  
         leerNumero(clave);
-    }else{
+    }else if(codigo>clave){
         console.log(`1: el ${codigo} es mayor que el numeroCorrecto`);
         leerNumero(clave);
     }
