@@ -25,7 +25,7 @@ function leerNumero (clave) {
     }else{
         console.log('Tiene que ser entre 1 y 100');
     }
-    }while(codigo !== clave)
+    }while(codigo !== clave);
 }
 function comprobarValor(codigo,clave){
 
